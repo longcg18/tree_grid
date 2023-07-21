@@ -10,6 +10,7 @@ import { TreeModule } from 'primeng/tree';
 import { CheckboxModule } from 'primeng/checkbox' ;
 import { NodeService } from 'src/service/nodeservice';
 import { NodeDataComponent } from './node-data/node-data.component';
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,9 +22,10 @@ import { NodeDataComponent } from './node-data/node-data.component';
     AppRoutingModule,
     AngularTreeGridModule,
     TreeModule,
-    CheckboxModule
+    CheckboxModule,
+    HttpClientModule
   ],
-  providers: [NodeService],
+  providers: [NodeService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

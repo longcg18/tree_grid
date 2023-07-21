@@ -8,37 +8,8 @@ import { NodeDataComponent } from './node-data/node-data.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'tree_grid';
 
-  files!: TreeNode[] ;
-  
-  selected_node!: TreeNode[] | null ;
 
-  constructor(private nodeService: NodeService) {}
-
-  ngOnInit() {
-    this.nodeService.getFiles().then((data) => (this.files = data));
-  }
-
-  expandAll() {
-    this.files.forEach((node) => {
-        this.expandRecursive(node, true);
-    });
-  }
-
-  collapseAll() {
-      this.files.forEach((node) => {
-          this.expandRecursive(node, false);
-      });
-  }
-
-  private expandRecursive(node: TreeNode, isExpand: boolean) {
-      node.expanded = isExpand;
-      if (node.children) {
-          node.children.forEach((childNode) => {
-              this.expandRecursive(childNode, isExpand);
-          });
-      }
-  }
 }

@@ -1,1 +1,6 @@
-<p>node-data works!</p>
+<div class="mb-3" style="left: 10px; position: absolute;">
+    <button pButton type="button" label="Expand all" (click)="expandAll()" class="mr-2">expandAll</button>
+    <button pButton type="button" label="Collapse all" (click)="collapseAll()">collapseAll</button>
+    <p-tree [value]="data" selectionMode="checkbox"></p-tree>
+
+  </div>

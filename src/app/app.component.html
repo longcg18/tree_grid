@@ -1,11 +1,6 @@
 <html> 
-  <div class="mb-3" style="left: 10px; position: absolute;">
-    <button pButton type="button" label="Expand all" (click)="expandAll()" class="mr-2">expandAll</button>
-    <button pButton type="button" label="Collapse all" (click)="collapseAll()">collapseAll</button>
-    <p-tree [value]="files" class="w-full md:w-30rem" selectionMode="checkbox" [selection]="selected_node"></p-tree>
 
-  </div>
-  <div style="right: 10px; position: absolute;">
+  <div style="left: 10px;">
     <app-node-data></app-node-data>
   </div>
 </html>
